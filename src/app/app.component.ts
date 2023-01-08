@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CustomtoastrService, ToastrMessageType, ToastrPosition } from './services/ui/customtoastr.service';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private toastrService: CustomtoastrService) {
+    toastrService.message("Melis", "Gencay", {
+      messageType: ToastrMessageType.Info,
+      position: ToastrPosition.TopCenter
+    });
+  }
   title = 'TradeClient';
 }
