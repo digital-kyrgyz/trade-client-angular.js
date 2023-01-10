@@ -8,11 +8,11 @@ declare var $: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private toastrService: CustomtoastrService) {
-    toastrService.message("Melis", "Gencay", {
-      messageType: ToastrMessageType.Info,
-      position: ToastrPosition.TopCenter
-    });
-  }
+
   title = 'TradeClient';
+  constructor() { }
 }
+
+$.get("https://localhost:7077/api/products", data => {
+  console.log(data);
+});
